@@ -13,5 +13,8 @@ def Calcular(x, y, op):
                 while(y == 0):
                     y = int( input( 'Ingrese un numero que no sea 0' ) )
                 return x / y
+        case "%":
+            return x * ( y / 100 )
+
         case _:
             raise Exception('Operación inválida')
