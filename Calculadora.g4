@@ -6,19 +6,19 @@ calculadora: defstmt;
 
 defstmt: 'def' NAME '(' ID ',' ID ',' NAME ')' ':' matchstmt;
 
-matchstmt: 'match' '(' NAME ')' ':' case_suma case_resta case_mult case_div case_avrg case_error;
+matchstmt: 'match' '(' NAME ')' ':' (case_suma | case_resta | case_mult | case_div | case_avrg | case_error)+;
 
-case_suma:  'case' ('"' '+' '"' | '\'' '+' '\'') ':' 'return' plus_op;
-case_resta: 'case' ('"' '-' '"' | '\'' '-' '\'') ':' 'return' minus_op;
-case_mult:  'case' ('"' '*' '"' | '\'' '*' '\'') ':' 'return' multiply_op;
-case_avrg:  'case' ('"' '%' '"' | '\'' '%' '\'') ':' 'return' avrg_op;
-case_div:   'case' ('"' '/' '"' | '\'' '/' '\'') ':' divisionstmt;
+case_suma:  'case' ('"' PLUSOP '"'   | '\'' PLUSOP   '\'') ':' 'return' plus_op;
+case_resta: 'case' ('"' MINUSOP '"'  | '\'' MINUSOP  '\'') ':' 'return' minus_op;
+case_mult:  'case' ('"' MULTOP '"'   | '\'' MULTOP   '\'') ':' 'return' multiply_op;
+case_avrg:  'case' ('"' PERCENOP '"' | '\'' PERCENOP '\'') ':' 'return' avrg_op;
+case_div:   'case' ('"' DIVIDEOP '"' | '\'' DIVIDEOP '\'') ':' divisionstmt;
+case_error: 'case' '_' ':' 'raise' exception_stmt;
 
 divisionstmt: 'if' '(' ID COMPOP INT ')' ':' 'return' divide_op 'else' ':' whilestmt;
-
 whilestmt: 'while' '(' ID COMPOP INT ')' ':' ID IQOP int_parser 'return' divide_op;
 
-case_error: 'case' '_' ':' 'raise' exception_stmt;
+
 
 int_parser: 'int' '(' input_stmt ')';
 input_stmt: 'input' '(' MSG ')';
@@ -49,5 +49,6 @@ PLUSOP: '+';
 MINUSOP: '-';
 MULTOP: '*';
 DIVIDEOP: '/';
+PERCENOP: '%';
 
 WS: [ \t\r\n]+ -> skip;
