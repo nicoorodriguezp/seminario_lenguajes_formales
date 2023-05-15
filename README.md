@@ -28,6 +28,7 @@ Generar un compilador (parser) capaz de detectar el lenguaje y palabras del bloq
 ### EJECUCIÓN
 #### Visualizar el árbol de derivación generado
 > antlr4-parse Calculadora.g4 start -gui grammars/grammar.py
+> 
 > antlr4-parse Calculadora.g4 start -gui grammars/grammar01.py
 
 #### Generar el código del Lexer y del Parser
