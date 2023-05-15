@@ -52,10 +52,10 @@ Segundo, el parámetro del "case" está entre ''(comillas simples)
 
 ### SCREENSHOTS
 
-![Derivation_Tree_Grammar_00](https://github.com/nicoorodriguezp/seminario_lenguajes_formales/screenshots/derivation_tree.png)
+![Derivation_Tree_Grammar_00](https://github.com/nicoorodriguezp/seminario_lenguajes_formales/blob/main/screenshots/derivation_tree.png)
 
-![Derivation_Tree_Grammar_00](https://github.com/nicoorodriguezp/seminario_lenguajes_formales/screenshots/derivation_tree_00.png)
+![Derivation_Tree_Grammar_00](https://github.com/nicoorodriguezp/seminario_lenguajes_formales/blob/main/screenshots/derivation_tree_00.png)
 
-![Derivation_Tree_Grammar_01](https://github.com/nicoorodriguezp/seminario_lenguajes_formales/screenshots/derivation_tree_01.png)
+![Derivation_Tree_Grammar_01](https://github.com/nicoorodriguezp/seminario_lenguajes_formales/blob/main/screenshots/derivation_tree_01.png)
 
-![Tokens_Hierarchy](https://github.com/nicoorodriguezp/seminario_lenguajes_formales/screenshots/tokens_hierarchy.png)
+![Tokens_Hierarchy](https://github.com/nicoorodriguezp/seminario_lenguajes_formales/blob/main/screenshots/tokens_hierarchy.png)
