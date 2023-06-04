@@ -74,7 +74,7 @@ matchstmt
 case_suma
 case_resta
 case_mult
-case_avrg
+case_percen
 case_div
 case_error
 divisionstmt
@@ -86,7 +86,7 @@ plus_op
 minus_op
 multiply_op
 divide_op
-avrg_op
+percen_op
 term
 exp
 factor

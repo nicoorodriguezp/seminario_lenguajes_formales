@@ -22,17 +22,17 @@ public class CalculadoraParser extends Parser {
 		PLUSOP=26, MINUSOP=27, MULTOP=28, DIVIDEOP=29, PERCENOP=30, WS=31;
 	public static final int
 		RULE_start = 0, RULE_calculadora = 1, RULE_defstmt = 2, RULE_matchstmt = 3, 
-		RULE_case_suma = 4, RULE_case_resta = 5, RULE_case_mult = 6, RULE_case_avrg = 7, 
+		RULE_case_suma = 4, RULE_case_resta = 5, RULE_case_mult = 6, RULE_case_percen = 7, 
 		RULE_case_div = 8, RULE_case_error = 9, RULE_divisionstmt = 10, RULE_whilestmt = 11, 
 		RULE_int_parser = 12, RULE_input_stmt = 13, RULE_exception_stmt = 14, 
 		RULE_plus_op = 15, RULE_minus_op = 16, RULE_multiply_op = 17, RULE_divide_op = 18, 
-		RULE_avrg_op = 19, RULE_term = 20, RULE_exp = 21, RULE_factor = 22;
+		RULE_percen_op = 19, RULE_term = 20, RULE_exp = 21, RULE_factor = 22;
 	private static String[] makeRuleNames() {
 		return new String[] {
 			"start", "calculadora", "defstmt", "matchstmt", "case_suma", "case_resta", 
-			"case_mult", "case_avrg", "case_div", "case_error", "divisionstmt", "whilestmt", 
-			"int_parser", "input_stmt", "exception_stmt", "plus_op", "minus_op", 
-			"multiply_op", "divide_op", "avrg_op", "term", "exp", "factor"
+			"case_mult", "case_percen", "case_div", "case_error", "divisionstmt", 
+			"whilestmt", "int_parser", "input_stmt", "exception_stmt", "plus_op", 
+			"minus_op", "multiply_op", "divide_op", "percen_op", "term", "exp", "factor"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -252,11 +252,11 @@ public class CalculadoraParser extends Parser {
 		public Case_divContext case_div(int i) {
 			return getRuleContext(Case_divContext.class,i);
 		}
-		public List<Case_avrgContext> case_avrg() {
-			return getRuleContexts(Case_avrgContext.class);
+		public List<Case_percenContext> case_percen() {
+			return getRuleContexts(Case_percenContext.class);
 		}
-		public Case_avrgContext case_avrg(int i) {
-			return getRuleContext(Case_avrgContext.class,i);
+		public Case_percenContext case_percen(int i) {
+			return getRuleContext(Case_percenContext.class,i);
 		}
 		public List<Case_errorContext> case_error() {
 			return getRuleContexts(Case_errorContext.class);
@@ -322,7 +322,7 @@ public class CalculadoraParser extends Parser {
 				case 5:
 					{
 					setState(71);
-					case_avrg();
+					case_percen();
 					}
 					break;
 				case 6:
@@ -542,20 +542,20 @@ public class CalculadoraParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Case_avrgContext extends ParserRuleContext {
-		public Avrg_opContext avrg_op() {
-			return getRuleContext(Avrg_opContext.class,0);
+	public static class Case_percenContext extends ParserRuleContext {
+		public Percen_opContext percen_op() {
+			return getRuleContext(Percen_opContext.class,0);
 		}
 		public TerminalNode PERCENOP() { return getToken(CalculadoraParser.PERCENOP, 0); }
-		public Case_avrgContext(ParserRuleContext parent, int invokingState) {
+		public Case_percenContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_case_avrg; }
+		@Override public int getRuleIndex() { return RULE_case_percen; }
 	}
 
-	public final Case_avrgContext case_avrg() throws RecognitionException {
-		Case_avrgContext _localctx = new Case_avrgContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_case_avrg);
+	public final Case_percenContext case_percen() throws RecognitionException {
+		Case_percenContext _localctx = new Case_percenContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_case_percen);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
@@ -592,7 +592,7 @@ public class CalculadoraParser extends Parser {
 			setState(126);
 			match(T__9);
 			setState(127);
-			avrg_op();
+			percen_op();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1084,21 +1084,21 @@ public class CalculadoraParser extends Parser {
 		return _localctx;
 	}
 
-	public static class Avrg_opContext extends ParserRuleContext {
+	public static class Percen_opContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(CalculadoraParser.ID, 0); }
 		public TerminalNode MULTOP() { return getToken(CalculadoraParser.MULTOP, 0); }
 		public Divide_opContext divide_op() {
 			return getRuleContext(Divide_opContext.class,0);
 		}
-		public Avrg_opContext(ParserRuleContext parent, int invokingState) {
+		public Percen_opContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_avrg_op; }
+		@Override public int getRuleIndex() { return RULE_percen_op; }
 	}
 
-	public final Avrg_opContext avrg_op() throws RecognitionException {
-		Avrg_opContext _localctx = new Avrg_opContext(_ctx, getState());
-		enterRule(_localctx, 38, RULE_avrg_op);
+	public final Percen_opContext percen_op() throws RecognitionException {
+		Percen_opContext _localctx = new Percen_opContext(_ctx, getState());
+		enterRule(_localctx, 38, RULE_percen_op);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{

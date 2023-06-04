@@ -6,12 +6,12 @@ calculadora: defstmt;
 
 defstmt: 'def' NAME '(' ID ',' ID ',' NAME ')' ':' matchstmt;
 
-matchstmt: 'match' '(' NAME ')' ':' (case_suma | case_resta | case_mult | case_div | case_avrg | case_error)+;
+matchstmt: 'match' '(' NAME ')' ':' (case_suma | case_resta | case_mult | case_div | case_percen | case_error)+;
 
 case_suma:  'case' ('"' PLUSOP '"'   | '\'' PLUSOP   '\'') ':' 'return' plus_op;
 case_resta: 'case' ('"' MINUSOP '"'  | '\'' MINUSOP  '\'') ':' 'return' minus_op;
 case_mult:  'case' ('"' MULTOP '"'   | '\'' MULTOP   '\'') ':' 'return' multiply_op;
-case_avrg:  'case' ('"' PERCENOP '"' | '\'' PERCENOP '\'') ':' 'return' avrg_op;
+case_percen:  'case' ('"' PERCENOP '"' | '\'' PERCENOP '\'') ':' 'return' percen_op;
 case_div:   'case' ('"' DIVIDEOP '"' | '\'' DIVIDEOP '\'') ':' divisionstmt;
 case_error: 'case' '_' ':' 'raise' exception_stmt;
 
@@ -28,7 +28,7 @@ plus_op: ID PLUSOP exp;
 minus_op: ID MINUSOP exp;
 multiply_op: ID MULTOP exp;
 divide_op: ID DIVIDEOP exp;
-avrg_op: ID MULTOP '(' divide_op ')';
+percen_op: ID MULTOP '(' divide_op ')';
 
 term: plus_op | minus_op | multiply_op | divide_op;
 exp: factor | term;
